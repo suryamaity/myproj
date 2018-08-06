@@ -1,7 +1,9 @@
 package com.example.su.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,13 +28,18 @@ public class MainActivity extends AppCompatActivity {
 
 
         ///////////////
-        String string = "1-50  of 500+";
+        String string = "1-50  of 500+asdda";
         String[] stringArray = string.split("\\s+");
 
         for (String str : stringArray)
         {
             System.out.println("------------"+str);
         }
-
+        findViewById(R.id.next).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,SecAvti.class));
+            }
+        });
     }
 }
